@@ -1,0 +1,44 @@
+&control
+    calculation = 'scf'
+    restart_mode = 'from_scratch'
+    prefix = 'al'
+    tprnfor = .true.
+    tstress = .true.
+!   verbosity = 'high'
+!   iprint = 1
+    pseudo_dir = './'
+/
+&system
+    ibrav = 0
+    nat = 4
+    ntyp = 1
+    ecutwfc = 40
+    occupations = 'smearing'
+    smearing = 'gaussian'
+    degauss = 0.001
+    nosym = .true.
+/
+&electrons
+    conv_thr = 1e-8
+    mixing_beta = 0.7
+    electron_maxstep = 200
+/
+&IONS
+/
+&CELL
+/
+ATOMIC_SPECIES
+Al      26.9815         Al_ONCV_PBE-1.2.upf
+
+CELL_PARAMETERS (angstrom)
+	    4.0500001907         0.0000000000         0.0000000000
+        0.0000000000         4.0500001907         0.0000000000
+        0.0000000000         0.0000000000         4.0500001907
+ATOMIC_POSITIONS (angstrom)
+ Al    0.200000000         0.000000000         0.000000000
+ Al    2.025000095         2.025000095         0.000000000
+ Al    2.025000095         0.000000000         2.025000095
+ Al    0.000000000         2.025000095         2.025000095
+
+K_POINTS (automatic)
+1 1 1 0 0 0
